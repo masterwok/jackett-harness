@@ -1,0 +1,36 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{DA3BAAF9-42CD-494D-9473-8E50604C5C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Android\Library\Library.csproj", "{7C057289-7509-4CE8-BBF9-CAC6DFD5D316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bindings", "Android\Bindings\Bindings.csproj", "{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "Android\App\App.csproj", "{777162C1-F170-475F-B1A3-8836DA86CB0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C057289-7509-4CE8-BBF9-CAC6DFD5D316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C057289-7509-4CE8-BBF9-CAC6DFD5D316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C057289-7509-4CE8-BBF9-CAC6DFD5D316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C057289-7509-4CE8-BBF9-CAC6DFD5D316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777162C1-F170-475F-B1A3-8836DA86CB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777162C1-F170-475F-B1A3-8836DA86CB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777162C1-F170-475F-B1A3-8836DA86CB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777162C1-F170-475F-B1A3-8836DA86CB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C057289-7509-4CE8-BBF9-CAC6DFD5D316} = {DA3BAAF9-42CD-494D-9473-8E50604C5C5A}
+		{ACDBC992-4608-4D72-BF9E-F8559C10A3EC} = {DA3BAAF9-42CD-494D-9473-8E50604C5C5A}
+		{777162C1-F170-475F-B1A3-8836DA86CB0D} = {DA3BAAF9-42CD-494D-9473-8E50604C5C5A}
+	EndGlobalSection
+EndGlobal
