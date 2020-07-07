@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="HelloXamarinService.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +63,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bindings\Bindings.csproj">
+      <Project>{acdbc992-4608-4d72-bf9e-f8559c10a3ec}</Project>
+      <Name>Bindings</Name>
+    </ProjectReference>
     <ProjectReference Include="Bindings\Bindings.csproj">
       <Project>{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}</Project>
       <Name>Bindings</Name>
