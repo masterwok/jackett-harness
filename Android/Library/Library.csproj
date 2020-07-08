@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelloXamarinService.cs" />
+    <Compile Include="CardigannDefinitionRepositoryWrapper.cs" />
+    <Compile Include="JackettHarnessWrapper.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,10 +64,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Maneki\Jackett\Jackett.Harness\Jackett.Harness.csproj">
-      <Project>{fb831c9f-7af7-435f-ba73-c0af075daa91}</Project>
-      <Name>Jackett.Harness</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Jackett\Jackett.Harness\Jackett.Harness.csproj">
       <Project>{577def1b-b41a-4982-9077-f9bd5d9f7b9f}</Project>
       <Name>Jackett.Harness</Name>
@@ -74,11 +71,6 @@
     <ProjectReference Include="..\Bindings\Bindings.csproj">
       <Project>{acdbc992-4608-4d72-bf9e-f8559c10a3ec}</Project>
       <Name>Bindings</Name>
-    </ProjectReference>
-    <ProjectReference Include="Bindings\Bindings.csproj">
-      <Project>{ACDBC992-4608-4D72-BF9E-F8559C10A3EC}</Project>
-      <Name>Bindings</Name>
-      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
