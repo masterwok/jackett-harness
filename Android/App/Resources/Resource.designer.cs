@@ -25,8 +25,6 @@ namespace JackettHarness.Android.App
 		
 		public static void UpdateIdValues()
 		{
-			global::Library.Resource.String.app_name = global::JackettHarness.Android.App.Resource.String.app_name;
-			global::Library.Resource.String.hello = global::JackettHarness.Android.App.Resource.String.hello;
 		}
 		
 		public partial class Attribute
