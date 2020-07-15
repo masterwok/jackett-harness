@@ -5,11 +5,11 @@
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProductVersion>8.0.30703</ProductVersion>
         <SchemaVersion>2.0</SchemaVersion>
-        <ProjectGuid>{ED7CA2E6-DC58-4BBC-87B8-6E138074A204}</ProjectGuid>
+        <ProjectGuid>{3CB2EB77-1483-4553-8CD5-925C19C0D4BB}</ProjectGuid>
         <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>XamarinDependency.Application</RootNamespace>
+        <RootNamespace>App</RootNamespace>
         <AssemblyName>App</AssemblyName>
         <FileAlignment>512</FileAlignment>
         <AndroidApplication>True</AndroidApplication>
@@ -21,7 +21,6 @@
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
-        <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DebugSymbols>True</DebugSymbols>
@@ -31,10 +30,9 @@
         <DefineConstants>DEBUG;TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
+        <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
         <AndroidLinkMode>None</AndroidLinkMode>
-        <AndroidSupportedAbis>armeabi-v7a;x86;arm64-v8a;x86_64</AndroidSupportedAbis>
-        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-        <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+        <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <DebugSymbols>True</DebugSymbols>
@@ -45,6 +43,7 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
         <AndroidManagedSymbols>true</AndroidManagedSymbols>
+        <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
         <AndroidLinkMode>SdkOnly</AndroidLinkMode>
         <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
     </PropertyGroup>
@@ -53,9 +52,6 @@
         <Reference Include="System.Xml" />
         <Reference Include="System.Core" />
         <Reference Include="Mono.Android" />
-        <Reference Include="Xamarin.AndroidX.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\.nuget\packages\xamarin.androidx.appcompat\1.1.0.1\lib\monoandroid90\Xamarin.AndroidX.AppCompat.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs" />
@@ -77,18 +73,12 @@
         <AndroidResource Include="Resources\values\styles.xml" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.1.0.1" />
-        <PackageReference Include="Xamarin.AndroidX.RecyclerView" Version="1.1.0.1" />
         <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0.1" />
     <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6.1" /></ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Library\Library.csproj">
         <Project>{7c057289-7509-4ce8-bbf9-cac6dfd5d316}</Project>
         <Name>Library</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\XamarinDependency.Library\XamarinDependency.Library.csproj">
-        <Project>{4DAF7CF3-D261-469C-91BF-17AE0662D61D}</Project>
-        <Name>XamarinDependency.Library</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

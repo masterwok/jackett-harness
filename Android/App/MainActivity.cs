@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
 
-namespace XamarinDependency.Application
+namespace App
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
