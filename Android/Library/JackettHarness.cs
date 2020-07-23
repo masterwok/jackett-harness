@@ -10,11 +10,19 @@ namespace Library
     {
         private readonly IJacketHarness _jackettHarness;
 
+        public bool IsInitialized => _jackettHarness
+            .IndexerService
+            .IsInitialized;
+
         public JackettHarness(ICardigannDefinitionRepository cardigannDefinitionRepository)
         {
             _jackettHarness = new Jackett.Harness.JackettHarness(
                 new CardigannDefinitionRepositoryWrapper(cardigannDefinitionRepository)
             );
         }
+
+        public void Initialize() => _jackettHarness
+            .IndexerService
+            .Initialize();
     }
 }
