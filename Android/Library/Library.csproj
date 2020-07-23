@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardigannDefinitionRepositoryWrapper.cs" />
-    <Compile Include="JackettHarnessWrapper.cs" />
+    <Compile Include="JackettHarness.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +61,10 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Jackett\Jackett.Harness\Jackett.Harness.csproj">
+      <Project>{577def1b-b41a-4982-9077-f9bd5d9f7b9f}</Project>
+      <Name>Jackett.Harness</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bindings\Bindings.csproj">
       <Project>{acdbc992-4608-4d72-bf9e-f8559c10a3ec}</Project>
       <Name>Bindings</Name>
