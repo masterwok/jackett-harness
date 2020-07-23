@@ -41,6 +41,6 @@ namespace Jackett.Harness.Contracts
 
         event EventHandler OnIndexersInitialized;
         Task<int> GetIndexerCount();
-        event EventHandler OnIndexerInitProcessed;
+        event EventHandler OnIndexerInitialized;
     }
 }

@@ -18,7 +18,7 @@ namespace Jackett.Harness.Services
         public event EventHandler OnQueryFinished;
         public event EventHandler OnIndexersInitialized;
 
-        public event EventHandler OnIndexerInitProcessed
+        public event EventHandler OnIndexerInitialized
         {
             add
             {
