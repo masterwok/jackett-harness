@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Android.Runtime;
 using Com.Masterwok.Xamarininterface.Contracts;
 using Jackett.Harness.Contracts;
@@ -13,6 +14,8 @@ namespace Library
         private IJackettHarnessListener _jackettHarnessListener;
 
         private IIndexerService IndexerService => _jackettHarness.IndexerService;
+
+        public int IndexerCount => Task.Run(async () => await IndexerService.GetIndexerCount()).Result;
 
         public bool IsInitialized => IndexerService.IsInitialized;
 
