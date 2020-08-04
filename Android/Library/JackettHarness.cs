@@ -40,6 +40,9 @@ namespace Library
 
             IndexerService.OnIndexerInitialized += (sender, args) => _jackettHarnessListener
                 .OnIndexerInitialized();
+
+            IndexerService.OnIndexerQueryResult += (sender, indexerQueryResult) => _jackettHarnessListener
+                .OnIndexerQueryResult(indexerQueryResult.ToKotlinIndexerQueryResult());
         }
 
         public void CancelQuery() => _cancellationTokenSource.Cancel();

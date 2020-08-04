@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardigannDefinitionRepositoryWrapper.cs" />
+    <Compile Include="Common\Extensions\IndexerExtensions.cs" />
+    <Compile Include="Common\Extensions\IndexerQueryResultExtensions.cs" />
+    <Compile Include="Common\Extensions\IndexerTypeExtensions.cs" />
     <Compile Include="Common\Extensions\KotlinQueryExtensions.cs" />
     <Compile Include="Common\Utils\TaskUtil.cs" />
     <Compile Include="JackettHarness.cs" />
