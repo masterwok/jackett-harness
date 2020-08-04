@@ -68,6 +68,10 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Jackett.Harness\Jackett.Harness.csproj">
+      <Project>{b76c9147-8c43-4a59-ab73-0f7920a227a7}</Project>
+      <Name>Jackett.Harness</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Jackett\Jackett.Harness\Jackett.Harness.csproj">
       <Project>{577def1b-b41a-4982-9077-f9bd5d9f7b9f}</Project>
       <Name>Jackett.Harness</Name>
