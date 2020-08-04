@@ -1,7 +1,11 @@
+using System.Threading;
 using System.Threading.Tasks;
 using Android.Runtime;
 using Com.Masterwok.Xamarininterface.Contracts;
+using Com.Masterwok.Xamarininterface.Models;
 using Jackett.Harness.Contracts;
+using Library.Common.Extensions;
+using Library.Common.Utils;
 using ICardigannDefinitionRepository = Com.Masterwok.Xamarininterface.Contracts.ICardigannDefinitionRepository;
 
 namespace Library
@@ -12,6 +16,7 @@ namespace Library
         private readonly IJacketHarness _jackettHarness;
 
         private IJackettHarnessListener _jackettHarnessListener;
+        private CancellationTokenSource _cancellationTokenSource;
 
         private IIndexerService IndexerService => _jackettHarness.IndexerService;
 
@@ -35,6 +40,18 @@ namespace Library
 
             IndexerService.OnIndexerInitialized += (sender, args) => _jackettHarnessListener
                 .OnIndexerInitialized();
+        }
+
+        public void CancelQuery() => _cancellationTokenSource.Cancel();
+
+        public void Query(Query query)
+        {
+            _cancellationTokenSource = new CancellationTokenSource();
+
+            TaskUtil.RunAndForget(() => IndexerService.Query(
+                query.ToJackettHarnessQuery()
+                , _cancellationTokenSource.Token
+            ));
         }
 
         public void Initialize() => IndexerService.Initialize();
