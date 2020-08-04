@@ -43,6 +43,9 @@ namespace Library
 
             IndexerService.OnIndexerQueryResult += (sender, indexerQueryResult) => _jackettHarnessListener
                 .OnIndexerQueryResult(indexerQueryResult.ToKotlinIndexerQueryResult());
+
+            IndexerService.OnQueryFinished += (sender, indexerQueryResult) => _jackettHarnessListener
+                .OnQueryCompleted();
         }
 
         public void CancelQuery() => _cancellationTokenSource.Cancel();

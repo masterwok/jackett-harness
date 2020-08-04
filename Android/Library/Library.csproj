@@ -51,6 +51,8 @@
     <Compile Include="Common\Extensions\IndexerQueryResultExtensions.cs" />
     <Compile Include="Common\Extensions\IndexerTypeExtensions.cs" />
     <Compile Include="Common\Extensions\KotlinQueryExtensions.cs" />
+    <Compile Include="Common\Extensions\QueryResultItemExtensions.cs" />
+    <Compile Include="Common\Extensions\QueryStateExtensions.cs" />
     <Compile Include="Common\Utils\TaskUtil.cs" />
     <Compile Include="JackettHarness.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
