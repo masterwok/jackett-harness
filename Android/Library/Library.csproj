@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardigannDefinitionRepositoryWrapper.cs" />
+    <Compile Include="Common\Extensions\DateTimeExtensions.cs" />
     <Compile Include="Common\Extensions\IndexerExtensions.cs" />
     <Compile Include="Common\Extensions\IndexerQueryResultExtensions.cs" />
     <Compile Include="Common\Extensions\IndexerTypeExtensions.cs" />

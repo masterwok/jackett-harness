@@ -15,23 +15,23 @@ namespace Jackett.Harness.Common.Models
         /// <summary>
         /// The magnet URI.
         /// </summary>
-        public Uri MagnetUri { get; set; }
+        public Uri? MagnetUri { get; set; }
 
         /// <summary>
         /// The number of seeders.
         /// </summary>
-        public int Seeders { get; set; }
+        public int? Seeders { get; set; }
 
         /// <summary>
         /// The number of peers.
         /// </summary>
-        public int Peers { get; set; }
+        public int? Peers { get; set; }
 
-        public Uri Link { get; set; }
+        public Uri? Link { get; set; }
 
-        public Uri Comments { get; set; }
+        public Uri? Comments { get; set; }
 
-        public DateTime PublishedOn { get; set; }
+        public DateTime? PublishedOn { get; set; }
 
         public long? Size { get; set; }
 
@@ -39,7 +39,7 @@ namespace Jackett.Harness.Common.Models
 
         public long? Grabs { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public long? RageID { get; set; }
 
@@ -49,9 +49,9 @@ namespace Jackett.Harness.Common.Models
 
         public long? TMDb { get; set; }
 
-        public Uri BannerUrl { get; set; }
+        public Uri? BannerUrl { get; set; }
 
-        public string InfoHash { get; set; }
+        public string? InfoHash { get; set; }
 
         public double? MinimumRatio { get; set; }
 
