@@ -1,7 +1,5 @@
-using System;
 using Jackett.Harness.Common.Models;
 using Java.Lang;
-using Java.Util;
 using Double = Java.Lang.Double;
 using KotlinQueryResultItem = Com.Masterwok.Xamarininterface.Models.QueryResultItem;
 using Uri = Android.Net.Uri;
