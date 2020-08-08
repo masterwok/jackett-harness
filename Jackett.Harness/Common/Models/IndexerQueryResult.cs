@@ -12,12 +12,12 @@ namespace Jackett.Harness.Common.Models
         /// <summary>
         /// The count of <see cref="Items"/> that have magnet URIs defined.
         /// </summary>
-        public int MagnetItemCount => Items.Count(c => c.MagnetUri != null);
+        public int MagnetItemCount { get; }
 
         /// <summary>
         /// The count of <see cref="Items"/> that don't have magnet URIs defined.
         /// </summary>
-        public int LinkItemCount => Items.Count(c => c.MagnetUri == null);
+        public int LinkItemCount { get; }
 
         /// <summary>
         /// The <see cref="Indexer"/> that was queried.
@@ -50,6 +50,8 @@ namespace Jackett.Harness.Common.Models
             Items = items;
             QueryState = queryState;
             FailureReason = failureReason;
+            MagnetItemCount = Items.Count(c => c.MagnetUri != null);
+            LinkItemCount = Items.Count - MagnetItemCount;
         }
     }
 }
