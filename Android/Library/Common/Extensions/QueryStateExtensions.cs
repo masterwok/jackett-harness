@@ -1,6 +1,6 @@
 using System;
 using Jackett.Harness.Common.Constants;
-using KotlinQueryState = Com.Masterwok.Xamarininterface.Enums.QueryState;
+using KotlinQueryState = Com.Masterwok.Xamarininterface.Enums.IndexerQueryState;
 
 namespace Library.Common.Extensions
 {
