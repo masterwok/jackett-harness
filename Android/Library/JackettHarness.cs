@@ -48,7 +48,7 @@ namespace Library
                 .OnQueryCompleted();
         }
 
-        public void CancelQuery() => _cancellationTokenSource.Cancel();
+        public void CancelQuery() => _cancellationTokenSource?.Cancel();
 
         public void Query(Query query)
         {
