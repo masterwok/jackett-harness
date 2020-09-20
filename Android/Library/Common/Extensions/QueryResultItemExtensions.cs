@@ -28,8 +28,8 @@ namespace Library.Common.Extensions
             ),
             statInfo: new KotlinQueryResultItem.StatInfo(
                 publishedOn: source.PublishedOn.ToJavaDate(),
-                seeders: source.Seeders == null ? null : new Integer(source.Seeders.Value),
-                peers: source.Peers == null ? null : new Integer(source.Peers.Value),
+                seeders: source.Seeders == null ? null : new Long(source.Seeders.Value),
+                peers: source.Peers == null ? null : new Long(source.Peers.Value),
                 size: source.Size == null ? null : new Long(source.Size.Value),
                 files: source.Files == null ? null : new Long(source.Files.Value),
                 grabs: source.Grabs == null ? null : new Long(source.Grabs.Value),

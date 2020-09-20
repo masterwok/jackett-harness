@@ -20,12 +20,12 @@ namespace Jackett.Harness.Common.Models
         /// <summary>
         /// The number of seeders.
         /// </summary>
-        public int? Seeders { get; set; }
+        public long? Seeders { get; set; }
 
         /// <summary>
         /// The number of peers.
         /// </summary>
-        public int? Peers { get; set; }
+        public long? Peers { get; set; }
 
         public Uri? Link { get; set; }
 
