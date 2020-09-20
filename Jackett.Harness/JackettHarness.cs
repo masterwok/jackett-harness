@@ -41,9 +41,10 @@ namespace Jackett.Harness
         {
             builder.RegisterModule(new JackettModule(new RuntimeSettings()));
             builder.RegisterType<JackettHarnessProtectionService>().As<IProtectionService>();
-            builder.RegisterType<HttpWebClient>().As<WebClient>().SingleInstance();
             builder.RegisterInstance(LogManager.GetCurrentClassLogger()).SingleInstance();
-            // builder.RegisterInstance(dataProtectionProvider).SingleInstance();
+
+            builder.RegisterType<HttpWebClient>();
+            builder.RegisterType<HttpWebClient2>().As<WebClient>();
         }
 
         private static void RegisterRepositories(
