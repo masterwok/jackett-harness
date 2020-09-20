@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Android.Runtime;
 using Com.Masterwok.Xamarininterface.Contracts;
+using Com.Masterwok.Xamarininterface.Enums;
 using Com.Masterwok.Xamarininterface.Models;
 using Jackett.Harness.Contracts;
 using Library.Common.Extensions;
@@ -17,12 +18,23 @@ namespace Library
 
         private IJackettHarnessListener _jackettHarnessListener;
         private CancellationTokenSource _cancellationTokenSource;
+        private QueryState _queryState;
 
         private IIndexerService IndexerService => _jackettHarness.IndexerService;
 
         public int IndexerCount => Task.Run(async () => await IndexerService.GetIndexerCount()).Result;
 
         public bool IsInitialized => IndexerService.IsInitialized;
+
+        public QueryState QueryState
+        {
+            get => _queryState;
+            private set
+            {
+                _queryState = value;
+                _jackettHarnessListener.OnQueryStateChange(value);
+            }
+        }
 
         public JackettHarness(ICardigannDefinitionRepository cardigannDefinitionRepository)
         {
@@ -44,14 +56,20 @@ namespace Library
             IndexerService.OnIndexerQueryResult += (sender, indexerQueryResult) => _jackettHarnessListener
                 .OnIndexerQueryResult(indexerQueryResult.ToKotlinIndexerQueryResult());
 
-            IndexerService.OnQueryFinished += (sender, indexerQueryResult) => _jackettHarnessListener
-                .OnQueryCompleted();
+            IndexerService.OnQueryFinished += (sender, indexerQueryResult) => { QueryState = QueryState.Completed; };
         }
 
-        public void CancelQuery() => _cancellationTokenSource?.Cancel();
+        public void CancelQuery()
+        {
+            QueryState = QueryState.Aborted;
+
+            _cancellationTokenSource?.Cancel();
+        }
 
         public void Query(Query query)
         {
+            QueryState = QueryState.Pending;
+
             _cancellationTokenSource = new CancellationTokenSource();
 
             TaskUtil.RunAndForget(() => IndexerService.Query(

@@ -14,9 +14,9 @@ namespace Jackett.Harness.Services
 {
     public class IndexerService : IIndexerService
     {
-        public event EventHandler<IndexerQueryResult> OnIndexerQueryResult;
-        public event EventHandler OnQueryFinished;
-        public event EventHandler OnIndexersInitialized;
+        public event EventHandler<IndexerQueryResult>? OnIndexerQueryResult;
+        public event EventHandler? OnQueryFinished;
+        public event EventHandler? OnIndexersInitialized;
 
         public event EventHandler OnIndexerInitialized
         {
@@ -120,7 +120,10 @@ namespace Jackett.Harness.Services
 
             await Task.WhenAll(queryTasks);
 
-            OnQueryFinished?.Invoke(this, null);
+            if (!cancellationToken.IsCancellationRequested)
+            {
+                OnQueryFinished?.Invoke(this, null);
+            }
         }
 
         public async Task<int> GetIndexerCount()
