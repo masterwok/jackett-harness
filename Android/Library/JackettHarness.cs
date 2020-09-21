@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.Runtime;
@@ -16,6 +19,7 @@ namespace Library
     {
         private readonly IJacketHarness _jackettHarness;
 
+        private ImmutableList<IndexerQueryResult> _queryResults = ImmutableList<IndexerQueryResult>.Empty;
         private IJackettHarnessListener _jackettHarnessListener;
         private CancellationTokenSource _cancellationTokenSource;
         private QueryState _queryState;
@@ -25,6 +29,8 @@ namespace Library
         public int IndexerCount => Task.Run(async () => await IndexerService.GetIndexerCount()).Result;
 
         public bool IsInitialized => IndexerService.IsInitialized;
+
+        public IList<IndexerQueryResult> QueryResults => _queryResults;
 
         public QueryState QueryState
         {
@@ -53,8 +59,12 @@ namespace Library
             IndexerService.OnIndexerInitialized += (sender, args) => _jackettHarnessListener
                 .OnIndexerInitialized();
 
-            IndexerService.OnIndexerQueryResult += (sender, indexerQueryResult) => _jackettHarnessListener
-                .OnIndexerQueryResult(indexerQueryResult.ToKotlinIndexerQueryResult());
+            IndexerService.OnIndexerQueryResult += (sender, indexerQueryResult) =>
+            {
+                _queryResults = _queryResults.Add(indexerQueryResult.ToKotlinIndexerQueryResult());
+
+                _jackettHarnessListener.OnResultsUpdated();
+            };
 
             IndexerService.OnQueryFinished += (sender, indexerQueryResult) => { QueryState = QueryState.Completed; };
         }
@@ -69,6 +79,8 @@ namespace Library
         public void Query(Query query)
         {
             QueryState = QueryState.Pending;
+
+            _queryResults = _queryResults.Clear();
 
             _cancellationTokenSource = new CancellationTokenSource();
 

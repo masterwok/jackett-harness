@@ -63,6 +63,7 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +72,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Jackett.Harness\Jackett.Harness.csproj">
       <Project>{b76c9147-8c43-4a59-ab73-0f7920a227a7}</Project>
-      <Name>Jackett.Harness</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Jackett\Jackett.Harness\Jackett.Harness.csproj">
-      <Project>{577def1b-b41a-4982-9077-f9bd5d9f7b9f}</Project>
       <Name>Jackett.Harness</Name>
     </ProjectReference>
     <ProjectReference Include="..\Bindings\Bindings.csproj">
