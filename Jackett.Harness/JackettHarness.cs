@@ -41,6 +41,7 @@ namespace Jackett.Harness
         {
             builder.RegisterModule(new JackettModule(new RuntimeSettings()));
             builder.RegisterType<JackettHarnessProtectionService>().As<IProtectionService>();
+            builder.RegisterType<DummyCacheService>().As<ICacheService>();
             builder.RegisterInstance(LogManager.GetCurrentClassLogger()).SingleInstance();
 
             builder.RegisterType<HttpWebClient>();
@@ -61,6 +62,7 @@ namespace Jackett.Harness
                 .Register(c => new CardigannIndexerRepository(
                     c.Resolve<ICardigannDefinitionRepository>()
                     , c.Resolve<IIndexerConfigurationService>()
+                    , c.Resolve<ICacheService>()
                     , c.Resolve<IProtectionService>()
                     , c.Resolve<WebClient>()
                     , c.Resolve<Logger>()

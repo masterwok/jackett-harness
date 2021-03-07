@@ -29,7 +29,7 @@ namespace Jackett.Harness.Common.Models
 
         public Uri? Link { get; set; }
 
-        public Uri? Comments { get; set; }
+        public Uri? Details { get; set; }
 
         public DateTime? PublishedOn { get; set; }
 
@@ -49,7 +49,7 @@ namespace Jackett.Harness.Common.Models
 
         public long? TMDb { get; set; }
 
-        public Uri? BannerUrl { get; set; }
+        public Uri? PosterUri { get; set; }
 
         public string? InfoHash { get; set; }
 

@@ -21,6 +21,7 @@ namespace Jackett.Harness.Repositories
     {
         private readonly ICardigannDefinitionRepository _cardigannDefinitionRepository;
         private readonly IIndexerConfigurationService _configService;
+        private readonly ICacheService _cacheService;
         private readonly IProtectionService _protectionService;
         private readonly WebClient _webClient;
         private readonly Logger _logger;
@@ -35,6 +36,7 @@ namespace Jackett.Harness.Repositories
         public CardigannIndexerRepository(
             ICardigannDefinitionRepository cardigannDefinitionRepository
             , IIndexerConfigurationService configService
+            , ICacheService cacheService
             , IProtectionService protectionService
             , WebClient webClient
             , Logger logger
@@ -46,6 +48,7 @@ namespace Jackett.Harness.Repositories
         {
             _cardigannDefinitionRepository = cardigannDefinitionRepository;
             _configService = configService;
+            _cacheService = cacheService;
             _protectionService = protectionService;
             _webClient = webClient;
             _logger = logger;
@@ -99,6 +102,7 @@ namespace Jackett.Harness.Repositories
                     , indexerWebClientInstance
                     , _logger
                     , _protectionService
+                    , _cacheService
                     , definition
                 );
                 // _configService.Load(indexer);

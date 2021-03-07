@@ -17,8 +17,8 @@ namespace Library.Common.Extensions
                 magnetUri: source.MagnetUri == null ? null : Uri.Parse(source.MagnetUri.ToString()),
                 infoHash: source.InfoHash,
                 link: source.Link == null ? null : Uri.Parse(source.Link.ToString()),
-                comments: source.Comments == null ? null : Uri.Parse(source.Comments.ToString()),
-                bannerUri: source.BannerUrl == null ? null : Uri.Parse(source.BannerUrl.ToString())
+                details: source.Details == null ? null : Uri.Parse(source.Details.ToString()),
+                posterUri: source.PosterUri == null ? null : Uri.Parse(source.PosterUri.ToString())
             ),
             socialInfo: new KotlinQueryResultItem.SocialInfo(
                 rageId: source.RageID == null ? null : new Long(source.RageID.Value),
